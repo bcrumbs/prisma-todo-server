@@ -1,4 +1,6 @@
-# Booben todo graphql server
+# Prisma todo server
+This server was created for booben(https://github.com/bcrumbs/booben) demo example. Basic authorisation and todo schema
+
 
 ## Get started
 
