@@ -39,8 +39,8 @@ services:
     networks:
       - prisma-network
 
-  booben-graphql:
-    image: booben-graphql
+  prisma-todo-graphql:
+    image: prisma-todo-graphql
     restart: always
     build:
       context: .
