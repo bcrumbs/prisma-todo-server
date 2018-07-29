@@ -4,7 +4,7 @@ This server was created for booben(https://github.com/bcrumbs/booben) demo examp
 
 ## Get started
 
-### Deploy and run on docker
+### Deploy and run on docker:
 
 ```sh
 # run prisma-todo on Docker
@@ -12,7 +12,7 @@ docker-compose up -d prisma mysql
 docker-compose up -d prisma-todo
 ```
 
-#### or run manual:
+### or run manual:
 
 ### 1. Install the Prisma CLI
 The `prisma` cli is the core component of your development workflow. `prisma` should be installed as a global dependency, you can install this with `npm install -g prisma`
