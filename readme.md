@@ -1,5 +1,5 @@
 # Prisma todo server
-This server was created for [**Booben**](https://github.com/bcrumbs/booben) demo app. Basic authorisation and todo schema
+This [Prisma](https://github.com/prismagraphql/prisma) server was created for [**Booben**](https://github.com/bcrumbs/booben) demo app. It includes basic authorisation and todo app schema.
 
 
 ## Get started
