@@ -47,7 +47,7 @@ prisma deploy
 <details>
  <summary><strong>I don't have <a href="https://www.docker.com">Docker</a> installed on my machine</strong></summary>
 
-To deploy your service to a demo server (rather than locally with Docker), please follow [this link](https://www.prisma.io/docs/quickstart/).
+To deploy your service to a demo server (rather than locally with Docker) follow [this link](https://www.prisma.io/docs/quickstart/).
 
 </details>
 
