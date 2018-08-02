@@ -39,8 +39,8 @@ services:
     networks:
       - prisma-network
 
-  prisma-todo-graphql:
-    image: prisma-todo-graphql
+  prisma-todo:
+    image: prisma-todo
     restart: always
     build:
       context: .
