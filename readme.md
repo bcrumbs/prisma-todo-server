@@ -15,7 +15,7 @@ docker-compose up -d prisma-todo
 ### or run manual:
 
 ### 1. Install the Prisma CLI
-The `prisma` cli is the core component of your development workflow. `prisma` should be installed as a global dependency, you can install this with `npm install -g prisma`
+The `prisma` cli is the core component of your development workflow. `prisma` should be installed as a global dependency, you can install this with `npm install -g prisma graphql-cli`
 
 ### 2. Download the example & install dependencies
 
