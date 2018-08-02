@@ -1,6 +1,9 @@
 # Prisma todo server
 This [Prisma](https://github.com/prismagraphql/prisma) server was created for [**Booben**](https://github.com/bcrumbs/booben) demo app. It includes basic authorisation and todo app schema.
 
+### Prerequisites
+
+You'll need [node](https://nodejs.org) version ^8.6.0 to run the server.
 
 ## Get started
 
@@ -34,7 +37,7 @@ yarn install
 
 ### 3. Deploy the Prisma database service
 
-You can now [deploy](https://www.prisma.io/docs/reference/cli-command-reference/database-service/prisma-deploy-kee1iedaov) the Prisma service (note that this requires you to have [Docker](https://www.docker.com) installed on your machine - if that's not the case, follow the collapsed instructions below the code block):
+You can now [deploy](https://www.prisma.io/docs/reference/cli-command-reference/database-service/prisma-deploy-kee1iedaov) the Prisma service (note that this requires you to have [Docker](https://www.docker.com) installed on your machine:
 
 ```sh
 # Ensure docker is running the server's dependencies
@@ -44,12 +47,7 @@ cd prisma
 prisma deploy
 ```
 
-<details>
- <summary><strong>I don't have <a href="https://www.docker.com">Docker</a> installed on my machine</strong></summary>
-
-To deploy your service to a demo server (rather than locally with Docker) follow [this link](https://www.prisma.io/docs/quickstart/).
-
-</details>
+If you don't have <a href="https://www.docker.com">Docker</a> installed on your machine, follow [this link](https://www.prisma.io/docs/quickstart/) to deploy your service to a demo server.
 
 ### 4. Explore the API
 
