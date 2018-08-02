@@ -22,13 +22,13 @@ The `prisma` cli is the core component of your development workflow. `prisma` sh
 Clone the Prisma monorepo and navigate to this directory or download _only_ this example with the following command:
 
 ```sh
-git clone https://github.com/bcrumbs/booben-prisma-todo-graphql
+git clone https://github.com/bcrumbs/prisma-todo-server
 ```
 
 Next, navigate into the downloaded folder and install the NPM dependencies:
 
 ```sh
-cd booben-prisma-todo-graphql
+cd prisma-todo-server
 yarn install
 ```
 
