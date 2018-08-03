@@ -17,7 +17,6 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   
 script:
-  - docker network 
   - sed -i '/ARG prisma_server/a ARG prisma_secret' Dockerfile
   - sed -i '/ARG prisma_secret/a ENV PRISMA_MANAGEMENT_API_SECRET=$prisma_secret' Dockerfile
   - echo "$(getent hosts $PRISMA_HOST | awk '{ print $1 }') prisma" | sudo tee -a /etc/hosts >/dev/null 2>&1
