@@ -22,6 +22,7 @@ script:
   - sudo sed -i -e '$a\' /etc/hosts
   - echo "$(getent hosts $PRISMA_HOST | awk '{ print $1 }') prisma" | sudo tee -a /etc/hosts >/dev/null 2>&1
   - cat /etc/hosts
+  - ping -c 3 prisma
   - docker network create prisma
   - docker-compose build --build-arg prisma_secret=$PRISMA_SECRET
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
