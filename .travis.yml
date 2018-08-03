@@ -1,0 +1,13 @@
+env:
+  global:
+  - DOCKER_REPO=braincrumbs/prisma-todo-server
+
+services:
+- docker
+
+script:
+- docker-compose up -d prisma mysql
+- docker-compose build;
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
+- docker tag prisma-todo:latest $DOCKER_REPO:latest;
+- docker push $DOCKER_REPO;
