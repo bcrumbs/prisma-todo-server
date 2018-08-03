@@ -19,8 +19,6 @@ before_install:
 script:
   - sed -i '/ARG prisma_server/a ARG prisma_secret' Dockerfile
   - sed -i '/ARG prisma_secret/a ENV PRISMA_MANAGEMENT_API_SECRET=$prisma_secret' Dockerfile
-  - docker build --add-host $(cat docker-compose.yml | grep prisma_server | awk '{ print $2 }'):$(getent hosts $PRISMA_HOST | awk '{ print $1 }') --build-arg prisma_server=prisma --build-arg prisma_secret=$PRISMA_SECRET
+  - docker build --add-host $(cat docker-compose.yml | grep prisma_server | awk '{ print $2 }'):$(getent hosts $PRISMA_HOST | awk '{ print $1 }') --build-arg prisma_server=prisma --build-arg prisma_secret=$PRISMA_SECRET -t $DOCKER_REPO:latest .
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker tag prisma-todo:latest $DOCKER_REPO:latest
   - docker push $DOCKER_REPO
-  
