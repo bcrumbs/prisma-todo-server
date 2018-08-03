@@ -17,8 +17,10 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   
 script:
-  - docker-compose up -d prisma mysql
-  - docker-compose build;
+  - sed '/ARG prisma_server/a ARG prisma_secret/' Dockerfile
+  - sed '/ARG prisma_secret/a ENV PRISMA_MANAGEMENT_API_SECRET=$prisma_secret' Dockerfile;
+  - echo "$(getent hosts $PRISMA_HOST | awk '{ print $1 }') prisma" | sudo tee -a /etc/hosts >/dev/null 2>&1
+  - docker-compose build --build-arg prisma_secret=$PRISMA_SECRET;
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
   - docker tag prisma-todo:latest $DOCKER_REPO:latest;
   - docker push $DOCKER_REPO;
