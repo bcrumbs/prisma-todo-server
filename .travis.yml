@@ -1,13 +1,25 @@
 env:
-  global:
+  - DOCKER_COMPOSE_VERSION=1.22.0
   - DOCKER_REPO=braincrumbs/prisma-todo-server
 
 services:
-- docker
+  - docker
 
+addons:
+  apt:
+    packages:
+      - docker-ce
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+  
 script:
-- docker-compose up -d prisma mysql
-- docker-compose build;
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
-- docker tag prisma-todo:latest $DOCKER_REPO:latest;
-- docker push $DOCKER_REPO;
+  - docker-compose up -d prisma mysql
+  - docker-compose build;
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin;
+  - docker tag prisma-todo:latest $DOCKER_REPO:latest;
+  - docker push $DOCKER_REPO;
+  
