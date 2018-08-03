@@ -1,10 +1,6 @@
 # Prisma todo server
 This [Prisma](https://github.com/prismagraphql/prisma) server was created for [**Booben**](https://github.com/bcrumbs/booben) demo app. It includes basic authorisation and todo app schema.
 
-### Prerequisites
-
-You'll need [node](https://nodejs.org) version ^8.6.0 to run the server.
-
 ## Get started
 
 ### Deploy and run on docker:
@@ -16,6 +12,10 @@ docker-compose up -d prisma-todo
 ```
 
 ### or run manual:
+
+### Prerequisites
+
+You'll need [node](https://nodejs.org) version ^8.6.0 to run the server.
 
 ### 1. Install the Prisma CLI
 The `prisma` cli is the core component of your development workflow. `prisma` should be installed as a global dependency, you can install this with `npm install -g prisma graphql-cli`
