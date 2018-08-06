@@ -180,4 +180,10 @@ const server = new GraphQLServer({
     }),
   }),
 })
-server.start(() => console.log('Server is running on localhost:4000'))
+
+const options = {
+  tracing: false,
+  cacheControl: false
+ };
+
+server.start(options, () => console.log('Server is running on localhost:4000'))
